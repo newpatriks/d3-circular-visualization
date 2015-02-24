@@ -14,6 +14,6 @@ h5,
 h6,
 ul,
 
-path.path_back {fill: #899eb3;}
-path.path_front {fill: #34495e;}
+path.circle_back {fill: #899eb3;}
+path.circle_front {fill: #34495e;}
 text {fill: #34495e;font-family: 'Open Sans Condensed', sans-serif;}
