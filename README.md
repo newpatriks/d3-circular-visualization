@@ -13,7 +13,7 @@ The file *circular-percentage.js* has to be added after add the D3 library on yo
 ###How to use
 
 To send the parameters to the object, you need to call the **init** funcion. And the parameters are:
-- ID of the element where the visualization will be placed
+- **ID** of the element where the visualization will be placed
 - **Minimum** value of the visualization
 - **Maximum** value of the visualization
 - **Final value** we want to show
