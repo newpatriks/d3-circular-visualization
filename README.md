@@ -3,6 +3,8 @@
 
 This is an js object that lets you build a visualizacion to show percentage data, or other data that can be represented by a circular visualization. The plugin has been created using the library [D3.js](http://d3js.org/).
 
+Here you have an example working: [Circular visualization](http://jordillobet.es/projects/circular-visualization/)
+
 ###Installation
 The file *circular-percentage.js* has to be added after add the D3 library on your html file. The object will be initializate automatically, so you don't need to call it. On the next step I'll explain how to pass the parameters to draw the correct circle.
 ```html
