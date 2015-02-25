@@ -1,7 +1,7 @@
 
 ![Circular-percentage](http://s1.postimg.org/x59zrod27/Captura_de_pantalla_2015_02_24_a_las_23_06_36.png)
 
-This is an js object that lets you build a visualizacion to show percentage data, or other data that can be represented by a circular visualization. The plugin has been created using the library [D3.js](http://d3js.org/).
+This is a js object that lets you build a visualizacion to show percentage data, or other data that can be represented by a circular visualization. The plugin has been created using the library [D3.js](http://d3js.org/).
 
 Here you have an example working: [Circular visualization](http://jordillobet.es/projects/circular-visualization/)
 
