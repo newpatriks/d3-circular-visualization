@@ -1,19 +1,4 @@
-html,
-body {
-  height: 100%;
-  font-size: 15px;
-  font-weight: 100;
-  background-color: #bdc3c7;
-}
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-
-path.circle_back {fill: #899eb3;}
+body              { background-color: #bdc3c7;}
+path.circle_back  {fill: #899eb3;}
 path.circle_front {fill: #34495e;}
-text {fill: #34495e;font-family: 'Open Sans Condensed', sans-serif;}
+text              {fill: #34495e;font-family: 'Open Sans Condensed', sans-serif;}

@@ -27,3 +27,25 @@ To send the parameters to the object, you need to call the **init** funcion. And
 </script>
 ```
 
+###Personalize
+
+You can personalize some of the things about the visualization. First of all you have to keep in mind the parts of the visualization:
+
+![Circular-percentage](http://s9.postimg.org/4001tuz5b/circle_visualization_details.jpg)
+
+The names that you can see on the image are the classes that are assigned to the elements. That classes can be changed on the function init call (last parameter), and will be applied inside init funcion:
+
+```javascript
+background = svg.append("path")
+  .datum({endAngle: τ})
+  .attr('class', class_assign+'_back')
+  .attr("d", arc);
+
+foreground = svg.append("path")
+  .datum({endAngle: τ})
+  .attr('class', class_assign+'_front')
+  .attr("d", arc);
+```
+
+Then, the class name will be *[you-personalized-name]_back* and *[you-personalized-name]_front*
+
