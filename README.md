@@ -49,3 +49,5 @@ foreground = svg.append("path")
 
 Then, the class name will be *[you-personalized-name]_back* and *[you-personalized-name]_front*
 
+======
+Jordi Llobet | newpatriks@gmail.com 
