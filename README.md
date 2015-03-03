@@ -55,7 +55,7 @@ This new functionality lets you update the value on the fly and the circle will 
 createAverage.update(50);
 ```
 
-As you can see, you call the update function passing the new value (0 < newValue < 100) through. 
+As you can see, you call the update function passing the new value through (0 < newValue < 100). 
 
 
 ======
