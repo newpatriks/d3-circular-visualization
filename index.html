@@ -17,14 +17,24 @@
   </head>
   
   <body>
-    <center><div id="circular_graph"></div></center>
+    <center>
+      <div id="circular_graph"></div></br>
+      <button id="changePercentage">Update!</button>
+    </center>
   </body>
   
   <script src="assets/js/lib/d3.v3.min.js"></script>
   <script src="assets/js/lib/circular-percentage.js"></script>
 
   <script type="text/javascript">
-    createAverage.init("circular_graph", 0, 100, 85, 'circle');
+    createAverage.init("circular_graph", 'circle', 85);
+
+    window.onload = function() {
+      document.getElementById("changePercentage").onclick = function() {
+        var rnd = Math.floor((Math.random() * 100) + 1);
+        createAverage.update(rnd);
+      } 
+    }
   </script>
 
 </html>

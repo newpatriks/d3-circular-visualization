@@ -3,20 +3,25 @@ var createAverage = (function() {
     iWidthCircle = 50,
     τ = 2 * Math.PI,
     fontSize = "2em",
-    arc, svg, background, foreground, text, avg, max;
+    _min = 0, _max = 100,
+    _value, _oldValue, _oldAngle,
+    arc, svg, background, foreground, text;
 
-  function animation(transition, newAngle, max)
+  function animation(transition, newAngle, oldAngle)
   {
+    _oldAngle = (!oldAngle) ? _min : oldAngle;
+    var interpolate = d3.interpolate(_oldAngle, newAngle);
+    var interpolateValue = d3.interpolateNumber(_oldAngle, newAngle);
+
     transition.attrTween("d", function(d) {
-      var interpolate = d3.interpolate(0, newAngle);
-      var interpolateValue = d3.interpolateNumber(0, newAngle);
       return function(t) {
         d.endAngle = interpolate(t);
         var textLabels = text
-          .text( d3.format(".1f")(interpolateValue(t) * max / τ) +' %' );
+          .text( d3.format(".1f")(interpolateValue(t) * _max / τ) +' %' );
         return arc(d);
       };
     });
+    _oldValue = (newAngle*_max/τ);
   }
   
   function myCallback() {
@@ -25,11 +30,10 @@ var createAverage = (function() {
   }
 
   return {
-    init : function(elem, min, max, avg, class_assign)
+    init : function(elem, class_assign, value)
     {
-      avg = avg;
-      max = max;
-
+      _value = value;
+      
       arc = d3.svg.arc()
         .innerRadius(iWidthCircle)
         .outerRadius(iWidthCircle+3)
@@ -58,11 +62,20 @@ var createAverage = (function() {
         .attr("dy", ".35em")
 
       text = svg.select("text")
-        .attr('class','txt_cercle');
+        .attr('class','circle-txt');
 
       foreground.transition()
         .duration(1000)
-        .call(animation, (avg * τ/max), max)
+        .call(animation, (_value * τ/_max))
+        .each("end", myCallback);
+    },
+    update : function(value)
+    {
+      _value = value;
+
+      foreground.transition()
+        .duration(1000)
+        .call(animation, (_value * τ/_max), (_oldValue * τ/_max))
         .each("end", myCallback);
     }
   }

@@ -1,4 +1,10 @@
+/*  Basic styles for the example side */
 body              { background-color: #bdc3c7;}
+button {position:relative;border: none;padding: 6px 10px;background-color: #899eb3;color: #fff;font-size: 12px;cursor: hand;}
+button:active{margin-top:1px;}
+button:hover{background-color:#34495e;}
+
+/*  styles for the svg elements */
 path.circle_back  {fill: #899eb3;}
 path.circle_front {fill: #34495e;}
-text              {fill: #34495e;font-family: 'Open Sans Condensed', sans-serif;}
+text.circle-txt   {fill: #34495e;font-family: 'Open Sans Condensed', sans-serif;}
