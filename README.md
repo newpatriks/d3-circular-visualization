@@ -16,14 +16,12 @@ The file *circular-percentage.js* has to be added after adding the D3 library on
 
 To send the parameters to the object, you need to call the **init** funcion. And the parameters are:
 - **ID** of the element where the visualization will be placed
-- **Minimum** value of the visualization
-- **Maximum** value of the visualization
-- **Final value** we want to show
 - **Class** will be assigned to the circles. This option is basically for css.
+- **Value** we want to show
 
 ```html
 <script type="text/javascript">
-  createAverage.init("circular_graph", 0, 100, 85, 'circle');
+  createAverage.init("circular_graph", 'circle', 85);
 </script>
 ```
 
@@ -47,7 +45,18 @@ foreground = svg.append("path")
   .attr("d", arc);
 ```
 
-Then, the class name will be *[you-personalized-name]_back* and *[you-personalized-name]_front*
+Then, the class name will be *[you-personalized-name]_back* and *[you-personalized-name]_front*, so you can update it on the css!
+
+#####Update feature
+
+This new functionality lets you update the value on the fly and the circle will adapt automatically. The instructions to call are the next:
+
+```javascript
+createAverage.update(50);
+```
+
+As you can see, you call the update function passing the new value (0 < newValue < 100) through. 
+
 
 ======
 Jordi Llobet | newpatriks@gmail.com 
