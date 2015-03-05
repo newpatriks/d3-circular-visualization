@@ -1,8 +1,8 @@
-var createAverage = (function() {
-  var svgWidth = 300,
-    iWidthCircle = 50,
+var CircleLoader = function() {
+  var _svgWidth = 300,
+    _iWidthCircle = 50,
     τ = 2 * Math.PI,
-    fontSize = "2em",
+    _fontSize = 20,
     _min = 0, _max = 100,
     _value, _oldValue, _oldAngle,
     arc, svg, background, foreground, text;
@@ -30,21 +30,24 @@ var createAverage = (function() {
   }
 
   return {
-    init : function(elem, class_assign, value)
+    init : function(elem, class_assign, value, width, fontSize)
     {
-      _value = value;
+      _value = value; 
+      _svgWidth = (width) ? width : _svgWidth;
+      _fontSize = fontSize ? fontSize : _fontSize;
+      _iWidthCircle = _svgWidth/6;
       
       arc = d3.svg.arc()
-        .innerRadius(iWidthCircle)
-        .outerRadius(iWidthCircle+3)
+        .innerRadius(_iWidthCircle)
+        .outerRadius(_iWidthCircle+3)
         .startAngle(0);
 
       svg = d3.select("#"+elem).append("svg")
-        .attr("width", svgWidth)
-        .attr("height", svgWidth)
+        .attr("width", _svgWidth)
+        .attr("height", _svgWidth)
         .attr("class","svg_cercles")
         .append("g")
-        .attr("transform", "translate(" + svgWidth/2 + "," + svgWidth/2 +")");
+        .attr("transform", "translate(" + _svgWidth/2 + "," + _svgWidth/2 +")");
 
       background = svg.append("path")
         .datum({endAngle: τ})
@@ -58,7 +61,7 @@ var createAverage = (function() {
 
       svg.append("text")
         .attr("text-anchor", "middle")
-        .attr("font-size", fontSize)
+        .attr("font-size", _fontSize + "px")
         .attr("dy", ".35em")
 
       text = svg.select("text")
@@ -79,4 +82,4 @@ var createAverage = (function() {
         .each("end", myCallback);
     }
   }
-})();
+}

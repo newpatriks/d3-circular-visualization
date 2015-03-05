@@ -1,8 +1,12 @@
 /*  Basic styles for the example side */
 body              { background-color: #bdc3c7;}
-button {position:relative;border: none;padding: 6px 10px;background-color: #899eb3;color: #fff;font-size: 12px;cursor: hand;}
-button:active{margin-top:1px;}
+button {position:relative;top:0px;border: none;padding: 6px 10px;background-color: #899eb3;color: #fff;font-size: 12px;cursor: hand;}
+button:active{top:1px;}
 button:hover{background-color:#34495e;}
+#main{display: table;width: 80%;margin: 0 auto;}
+.main_row {display: table-row;}
+.graph {display: table-cell;text-align: center;}
+
 
 /*  styles for the svg elements */
 path.circle_back  {fill: #899eb3;}
