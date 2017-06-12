@@ -15,7 +15,7 @@
     <![endif]-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   </head>
-  
+
   <body>
     <center></br></br><button id="changePercentage">Update!</button></center>
     <div id="main">
@@ -27,9 +27,9 @@
       </div>
     </center>
   </body>
-  
+
   <script src="assets/js/lib/d3.v3.min.js"></script>
-  <script src="assets/js/lib/circle-loader.min.js"></script>
+  <script src="assets/js/lib/circle-loader.js"></script>
 
   <script type="text/javascript">
     var graph_1 = new CircleLoader();
@@ -48,12 +48,12 @@
         var rnd_2 = Math.floor((Math.random() * 100) + 1);
         var rnd_3 = Math.floor((Math.random() * 100) + 1);
         var rnd_4 = Math.floor((Math.random() * 100) + 1);
-        
+
         graph_1.update(rnd_1);
         graph_2.update(rnd_2);
         graph_3.update(rnd_3);
         graph_4.update(rnd_4);
-      } 
+      }
     }
   </script>
 
