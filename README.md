@@ -5,14 +5,14 @@ This is a js object that lets you build a visualization to show percentage data,
 
 Here you have an example working: [Circular visualization](http://jordillobet.es/projects/circular-visualization/)
 
-###Installation
+### Installation
 The file *circular-percentage.js* has to be added after adding the D3 library on your html file. The object will be initialized automatically, so you don't need to call it. On the next step I'll explain how to pass the parameters to draw the correct circle.
 ```html
 <script src="assets/js/lib/d3.v3.min.js"></script>
 <script src="assets/js/lib/circle-loader.min.js"></script>
 ```
 
-###How to use
+### How to use
 
 To send the parameters to the object, you need to call the **init** funcion. And the parameters are:
 - **ID** of the element where the visualization will be placed.
@@ -37,7 +37,7 @@ or
 </script>
 ```
 
-###Personalize
+### Personalize
 
 You can personalize some of the things about the visualization. First of all you have to keep in mind the parts of the visualization:
 
@@ -59,7 +59,7 @@ foreground = svg.append("path")
 
 Then, the class name will be *[you-personalized-name]_back* and *[you-personalized-name]_front*, so you can update it on the css!
 
-#####Update feature
+##### Update feature
 
 This new functionality lets you update the value on the fly and the circle will adapt automatically. The instructions to call are the next:
 
@@ -71,4 +71,5 @@ As you can see, you call the update function passing the new value through (0 < 
 
 
 ======
+
 Jordi Llobet | newpatriks@gmail.com 
